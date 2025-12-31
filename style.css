@@ -1,0 +1,405 @@
+:root {
+  --black: #0d0d0d;
+  --gray: #6e6e73;
+  --light: #f5f5f7;
+  --max-width: 980px;
+}
+
+
+/* GLOBAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+/*logo*/
+.logo {
+  filter: brightness(1.2); /* Explicitly set original state */
+  transform: scale(1.5); /* Explicitly set original size */
+  
+  /* Standard duration for professional animations is 0.3s to 0.5s */
+  transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+}
+
+.logo:hover {
+ transform: scale(1.53); /* Grows by 10% */
+  filter:  brightness(1.2) drop-shadow(0 0 15px rgb(207, 207, 207)); /* Glow effect */
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  color: var(--black);
+  background: white;
+  line-height: 1.55;
+}
+
+/* NAVIGATION */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.678);
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 1000;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--black);
+  text-shadow: none;
+}
+
+nav a:hover {
+  text-shadow: 
+    0 0 10px #ffffff, 
+    0 0 20px rgb(92, 92, 92), 
+    0 0 40px rgb(63, 63, 63);
+    transition: text-shadow 0.8s ease;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("hero.jpg") center/cover no-repeat; 
+}
+
+.hero h1 {
+  font-size: 80px;
+ text-transform: uppercase;
+ text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  font-weight: 800;
+  max-width: 900px;
+  padding: 0 0px;
+}
+
+/* CONTENT SECTIONS */
+.section {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 100px 20px;
+  text-align: left justify;
+}
+
+.section.light {
+  max-width: var(--max-width);
+
+}
+
+
+.section h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section p {
+  font-size: 18px;
+  color: var(--gray);
+  margin-bottom: 32px;
+}
+
+/* FULL IMAGE STRIP */
+.image-strip {
+  height: 80vh;
+  background: url("section.jpg") center/cover no-repeat;
+}
+
+
+/* ANIMATION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+  
+	}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
+}
+
+
+/* FOOTER */
+
+body {
+  flex-direction: column;
+  min-height: 100vh; /* Full height of browser */
+  margin: 0;
+  max-width: 100%;
+  display: flex;
+}
+
+main {
+  flex: 0; /* Pushes the footer to the bottom */
+}
+
+footer {
+  background: #ffffff;
+  padding: 0 120px;
+  margin-top: 90px;
+  border-top: 1px solid #616161;
+  margin: 0 auto;
+}
+
+.footer-content {
+  justify-content: space-between;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 200px;
+}
+
+footer a {
+  display: block;
+  color: #000000;
+  transition: color 0.4s ease;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 100%;
+}
+
+footer a:hover {
+  color: #8b8b8b;
+}
+
+.footer-bottom {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* BUTTONS */
+
+.btn-primary {
+  background: rgb(236, 236, 236);
+  padding: 10px 6px;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: black;  box-shadow: 0px 0px 5px rgb(94, 94, 94);
+  transition: box-shadow 0.6s ease;
+}
+
+.btn-primary:hover { 
+  box-shadow: 0px 0px 15px rgb(207, 207, 207);
+  transition: box-shadow 0.8s ease-in-out;
+  
+}
+
+.btn-secondary {
+  background: rgb(236, 236, 236);
+  color: black;
+  padding: 20px 15px;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: black;  box-shadow: 0px 0px 5px rgb(94, 94, 94);
+  transition: box-shadow 0.6s ease;
+}
+
+.btn-secondary:hover { 
+  box-shadow: 0px 0px 15px rgb(255, 0, 0);
+  transition: box-shadow 0.8s ease-in-out;
+}
+
+
+/*trying to style contact page*/
+.contact-layout {
+  display: grid;
+  /* Creates two columns of equal width */
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px; /* Space between the two columns */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the whole container on the page */
+}
+
+/* --- Left Column Styling --- */
+.contact-info h1 {
+  /* Style your titles as needed */
+  color: #333;
+}
+
+.contact-info p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: left; /* Aligns text to the left */
+}
+
+.map-link img {
+  width: 100%;       /* Ensures image fills the column width */
+  height: auto;      /* Maintains aspect ratio (responsive) */
+  display: block;    /* Removes default bottom gap */
+  border: 1px solid #ccc; /* Adds a border like in the image */
+  margin-top: 20px;
+}
+
+
+/* --- Right Column (Form) Styling --- */
+.contact-form {
+    background-color: #f0f8ff; /* Light blue background like image */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+/* This makes First and Last name inputs share a row */
+.form-row input {
+    flex: 1; 
+}
+
+.contact-form textarea {
+    height: 150px; /* Adjust message box height */
+}
+
+.submit-area {
+    /* Style for the submit button container */
+    background-color: #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- Responsiveness (Mobile View) --- */
+@media (max-width: 768px) {
+  /* ... (Keep your other mobile styles for .section, .hero h1, contact-layout) ... */
+
+  /* Fixes the footer columns so they stack vertically */
+  .footer-grid {
+    grid-template-columns: 1fr; /* Changes from 3 columns to 1 column */
+    gap: 40px;                  /* Reduces the gap on mobile */
+    padding: 0 20px;            /* Adds padding so content doesn't touch screen edges */
+  }
+  
+  /* Show the hamburger icon ONLY on mobile */
+  .menu-toggle {
+    display: block; /* Overrides the global 'display: none' */
+  }
+
+  /* Hides the links by default on mobile screens (the minimized state) */
+  .nav-links {
+    display: none !important; /* Forces hiding until clicked */
+    position: absolute;
+    top: 100px; 
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    z-index: 999; 
+  }
+
+  /* When JS adds the active class, display the menu (the maximized state) */
+  .nav-links.active {
+    display: flex !important; /* Forces visibility when active */
+  }
+  
+  /* Ensure individual links stretch nicely in the menu */
+  .nav-links a {
+    margin: 10px 20px; /* Add padding for better tapping experience */
+  }
+}
+
+/* NAVIGATION PC */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.678);
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 1000;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--black);
+  text-shadow: none;
+}
+
+nav a:hover {
+  text-shadow: 
+    0 0 10px #ffffff, 
+    0 0 20px rgb(92, 92, 92), 
+    0 0 40px rgb(63, 63, 63);
+    transition: text-shadow 0.8s ease;
+}
+
+/* Style the new menu toggle button (Hidden on PC by default) */
+.menu-toggle {
+  display: none; /* Hides the button on PC screens */
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex; /* Links are visible side-by-side on PC */
+  align-items: center;
+}
+
+/* Specific styles for phones/tablets when in Landscape mode */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+
+    /* Force the navigation links to be hidden in landscape mode */
+    .nav-links {
+        display: none !important; 
+    }
+
+    /* Force the hamburger icon to appear in landscape mode */
+    .menu-toggle {
+        display: block !important;
+    }
+    
+    /* Optional: reduce the padding on the nav bar itself to save vertical space */
+    .nav {
+        padding: 10px 20px; 
+    }
+}
+/* END OF STYLE.CSS */
